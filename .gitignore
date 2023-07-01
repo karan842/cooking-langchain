@@ -1,1 +1,3 @@
 env/
+apikey.py
+__pycache__/
