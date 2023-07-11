@@ -4,3 +4,4 @@ langchain
 huggingface_hub
 transformers
 chromadb
+faiss-cpu
