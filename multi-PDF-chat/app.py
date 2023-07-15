@@ -1,23 +1,28 @@
 import streamlit as st 
 from dotenv import load_dotenv
-from utils import get_pdf_text, get_text_chunks, get_vectorstore, get_conversation_chain
+from utils import (
+    get_pdf_text, get_text_chunks, get_vectorstore, 
+    get_conversation_chain, handle_userinput
+)
 from htmlTemplates import css, bot_template, user_template
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title='PrivateChat with Multiple PDFs💭', page_icon=":books:")
+    st.set_page_config(page_title='PrivateGPT', page_icon=":rocket:")
     
     st.write(css, unsafe_allow_html=True)
     
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = None
     
-    st.header("Chat with multiple PDFs :books:")
-    st.text_input("Ask a question about your documents:")
-    
-    st.write(user_template.replace("{{MSG}}", "Hello, robot"), unsafe_allow_html=True)
-    st.write(bot_template.replace("{{MSG}}", "Hello, human"), unsafe_allow_html=True)
-    
+    st.header("Private GPT - Chat with multiple PDFs :books:")
+    st.warning("Please upload documents and process first! Then questions")
+    user_question = st.text_input("Ask a question about your documents:")
+    if user_question:
+        handle_userinput(user_question)
+ 
     with st.sidebar:
         st.subheader("Your documents")
         pdf_docs = st.file_uploader("Upload your PDFs here and click on Process", accept_multiple_files=True)
@@ -31,7 +36,7 @@ def main():
                 text_chunks = get_text_chunks(raw_text)
                 
                 # Create vector store 
-                vectorestore = get_vectorstore(text_chunks)
+                vectorstore = get_vectorstore(text_chunks)
                 
                 # Create conversation chain
                 # Using `session_state` streamlit won't reinitialize the variable
