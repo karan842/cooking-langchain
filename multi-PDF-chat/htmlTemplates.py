@@ -37,7 +37,7 @@ bot_template = '''
 user_template = '''
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg">
+        <img src="https://th.bing.com/th/id/R.b544146a8e95908f097fe86343f9140b?rik=jX7vw4SGwprkmQ&riu=http%3a%2f%2fgetdrawings.com%2ffree-icon%2fhuman-icon-png-68.png&ehk=6%2fQzY0BOQSjQjQezTPTHGr%2fZ7zGlyHnCLtaD9hyBwKs%3d&risl=&pid=ImgRaw&r=0">
     </div>    
     <div class="message">{{MSG}}</div>
 </div>

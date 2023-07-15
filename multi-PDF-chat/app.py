@@ -17,8 +17,8 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
     
-    st.header("Private GPT - Chat with multiple PDFs :books:")
-    st.warning("Please upload documents and process first! Then questions")
+    st.header("Private GPT - Chat with PDFs :books:")
+    st.warning("Please upload documents and process first! Then ask questions")
     user_question = st.text_input("Ask a question about your documents:")
     if user_question:
         handle_userinput(user_question)
