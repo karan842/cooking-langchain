@@ -1,4 +1,7 @@
-# 🍪Cooking Langchain🦜🔗
+# 🍔🍴Cooking Langchain🦜🔗
+
+![COOKING](https://media1.tenor.com/images/0af295e672de3d9e05e9b31ed1e05671/tenor.gif?itemid=18212912)
+
 
 ##### Pushing new learning or project every Saturday 🍿
 
@@ -14,4 +17,5 @@ Branches:
 
 
 ### Projects:
-1. YouTube Content(Script) generator
+1. YouTube Content(Script) generator📜
+2. Chat with MULTI PDFs📚
